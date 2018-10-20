@@ -1,0 +1,73 @@
+@import (reference) '~less/variables.less';
+
+div#loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: fade(@white, 50%);
+	font-size: 1.5em;
+
+	&.large {
+		>div {
+			font-size: 2em;
+		}
+
+		>span {
+			font-size: 0.75em;
+		}
+	}
+
+	div {
+		border-radius: 50%;
+		box-sizing: border-box;
+		transition: transform 0.25s linear;
+	}
+
+	>div {
+		width: 4em;
+		height: 4em;
+		border: 0.25em solid @primary;
+		border-top: 0.25em solid fade(@primary, 62.5%);
+
+		>div {
+			width: 3.25em;
+			height: 3.25em;
+			margin-left: 0.25em;
+			border: 0.25em solid @secondary;
+			border-left: 0.25em solid fade(@secondary, 62.5%);
+
+			>div {
+				width: 2.5em;
+				height: 2.5em;
+				margin-left: 0.25em;
+				border: 0.25em solid @primary;
+				border-bottom: 0.25em solid fade(@primary, 62.5%);
+
+				>div {
+					width: 1.75em;
+					height: 1.75em;
+					margin-left: 0.25em;
+					border: 0.25em solid @secondary;
+					border-right: 0.25em solid fade(@secondary, 62.5%);
+				}
+			}
+		}
+	}
+
+	>span {
+		color: @white;
+		display: inline-block;
+		padding: 0.5em 0.75em;
+		margin: 0.75em;
+		background-color: @primary;
+		border-radius: 2px;
+		font-size: 0.5em;
+		font-weight: 200;
+	}
+}
